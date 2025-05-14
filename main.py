@@ -1,13 +1,15 @@
-import requests
-from bs4 import BeautifulSoup
-import time
-import csv
+import requests # Used for HTTP requests
+from bs4 import BeautifulSoup # Used for HTML parsing
+import time # Used for rate - limiting
+import csv # Used for saving the data
+
 #          CONFIGURATION
-BASE_URL = "https://www.jumia.com.ng/laptops/"
+BASE_URL = "https://www.jumia.com.ng/laptops/" # URL of the category page
 HEADERS = {"User-Agent": "Mozilla/5.0"}
-OUTPUT_FILE = "products.csv"
-DELAY_BETWEEN_REQUESTS = 2  # seconds
-MAX_RETRIES = 3
+OUTPUT_FILE = "products.csv" # This is the path for the CSV output file
+DELAY_BETWEEN_REQUESTS = 2  # This will be the requests delay in seconds
+MAX_RETRIES = 3 # Number of HTTP retries
+
 #          END OF CONFIGURATION
 FIELDS = ["Name", "Price", "Availability", "Rating", "URL", "Reviews", "Details"]
 
